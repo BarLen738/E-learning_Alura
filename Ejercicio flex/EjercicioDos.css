@@ -1,0 +1,16 @@
+.flexContainer {
+    display: flex;
+  }
+  .flexItem {
+    /*Cada elemento ocupa 200px de ancho*/
+    width: 200px;
+    height: 400px;
+    border: 1px solid black;
+  }
+
+  .flexItem:first-child {
+    /*En total si achicamos la pantalla hasta un ancho de 800px, todos tendran el mismo tamanho. Si seguimos achicando, el primer elemento se va a achicar 5 veces mas que sus hermanos, y el valor se va a ir atualizando a medida que la pantalla se achique cada vez mas*/
+    flex-shrink: 5;
+  }
+
+  /*La propiedad flex-basis sirve para definir una anchura o altura para el flex item. Si el flex container tiene flex-direction: column, el flex-basis en el flex item servirá para definir una height. En este caso el flex-direction: row funciona como un width.*/

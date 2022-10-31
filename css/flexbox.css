@@ -1,0 +1,162 @@
+.headerPrincipal .container {
+    /*ELEMENTO PADRE*/
+    /*Declarar flexbox en el container*/
+    display: flex;
+    /*Alineados al centro segun su coordenada x, si la flex-direction fuera row los alinea al centro pero segun el eje y*/
+    align-items: center;
+    /*Espacio entre los elementos*/
+    justify-content: space-between;
+}
+
+/*Navegadores en los que puedo usar determinadas propiedades, web caniuse*/
+
+.headerPrincipal-nav {
+    /*Declarar flexbox en el nav*/
+    display: flex;
+
+
+}
+
+.rodapePrincipal-patrocinadores .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /*Indicarle el ancho para que pueda aplicar la propiedad anterior*/
+    width: 70%;
+    /*Separarlo del elemento de al lado rodapePrincipal-contatoForm*/
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm {
+    /*Asignarle el ancho restante al hermano*/
+    width: 25%;
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+    /*Container campo a llenar + enviar*/
+    /*Elementos uno al lado del otro*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rodapePrincipal-contatoForm-submit {
+    margin-top: 1rem;
+}
+
+.rodapePrincipal-navMap-list {
+    display: flex;
+    /*Para que aparezcan uno debajo del otro*/
+    flex-direction: column;
+    /*Para fijar la altura del contenedor*/
+    height: 260px;
+    /*Para que al detectar esa altura, los elementos se acomoden uno al lado del otro*/
+    flex-wrap: wrap;
+}
+
+.contenidoPrincipal-cursos {
+    /*Contenedor flex ul*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenidoPrincipal-cursos-link {
+    /*Contenedor flex li*/
+    display: flex;
+    /*4 elementos por fila 20% + 3% para un margen entre ellos */
+    width: 23%;
+}
+
+.videoSobre .container {
+    display: flex;
+}
+
+.videoSobre-sobre {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.videoSobre-video {
+    /*Toma todo el espacio sobrante a los lados y los divide para el elemento que le indique*/
+    flex-grow: 2;
+    /*Para achicar el espacio disponible para el video dos veces*/
+    flex-shrink: 2;
+}
+
+.videoSobre-sobre-list {
+    /*Crea un espacio doble entre ambos elementos, el texto y el boton*/
+    flex-grow: 2;
+}
+/*Responsivo*/
+
+@media (max-width:768px) {
+
+
+    .headerPrincipal .container {
+        flex-direction: column;
+        /*Toma la alineacion de los elementos declarada al ppio, row*/
+        align-items: initial;
+        text-align: center;
+    }
+
+    .headerPrincipal-nav {
+        flex-direction: column;
+    }
+
+    .contenidoPrincipal-cursos {
+        flex-direction: column;
+
+    }
+
+    .contenidoPrincipal-cursos-link {
+        width: 100%;
+
+    }
+
+    .rodapePrincipal-navMap-list {
+        height: auto;
+        flex-wrap: nowrap;
+    }
+
+    .rodapePrincipal-patrocinadores .container {
+        flex-direction: column;
+    }
+
+    .rodapePrincipal-contatoForm {
+        width: 100%;
+    }
+
+    .rodapePrincipal-patrocinadores-list {
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .rodapePrincipal-contatoForm-fieldset {
+        justify-content: center;
+    }
+
+    .rodapePrincipal-contatoForm-submit {
+        margin: 0;
+    }
+
+    .headerPrincipal-nav-link-app {
+        /*Colocar primero el ultimo link*/
+        order: -1;
+    }
+
+    .videoSobre .container {
+        flex-direction: column;
+    }
+
+}
+
+/*Flex-grow hace crecer el elemento al que yo le aplique esta propiedad tomando el espacio disponible con el valor que yo le haya dado a la propiedad y haciendo que este sea x veces mas grande que los demas elementos*/
+/*Flex-shrink hace lo contrario.*/
+/*flex-basic para asignar un tamanho inicial, ancho, que se mantiene y darle un flex-grow de 0*/
+/*Para abreviar, usar flex: valor para flex-grow, valor para flex-shrink y valor para flex-basic*/
